@@ -1,32 +1,32 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/widgets/Header";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+const montserrat = Montserrat({
+    variable: "--font-montserrat",
+    subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: "SkinSpace | Main",
-  description: "SkinSpace - site for selling and buying skins in CS:GO, DOTA 2, Rust and more...",
+    title: "SkinSpace | Main",
+    description:
+        "SkinSpace - site for selling and buying skins in CS:GO, DOTA 2, Rust and more...",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body
+                className={`${montserrat.className} antialiased bg-[#1F2125]`}
+            >
+                <Header />
+                {children}
+            </body>
+        </html>
+    );
 }

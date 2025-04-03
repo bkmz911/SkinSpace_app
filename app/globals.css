@@ -1,10 +1,21 @@
 @import "tailwindcss";
 
+@theme {
+    --color-bluishBlack: #181a1e;
+    --color-blackGrey: #1f2125;
+    --color-lemony: #ffdb18;
+    --color-paleBlue: #8f9092;
+    --color-blueBlack: #2b2c30;
+    --color-granite: #2f3135;
+    --color-blackOlive: #3b3b33;
+    --color-slateGray: #3e4045;
+}
+
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
