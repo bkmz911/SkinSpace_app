@@ -1,0 +1,1 @@
+export { ButtonFill } from '@/shared/ui/button-fill';
