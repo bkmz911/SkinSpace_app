@@ -69,7 +69,7 @@ const className =
 
 export const RecentDealsItems = () => {
     return (
-        <div className="flex items-center justify-center flex-wrap gap-5 pl-[50px] mx-[35px] xl:mx-[60px] mt-[70px] pb-[15px]">
+        <div className="flex items-center justify-center flex-wrap gap-5 pl-[50px] mx-[35px] xl:mx-[60px] mt-[70px]">
             {products.map((product) => {
                 return (
                     <div className={product.className} key={product.id}>

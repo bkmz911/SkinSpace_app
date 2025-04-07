@@ -20,7 +20,7 @@ export const WelcomeBlock = () => {
                     </span>
                 </div>
                 <div className="text-center xl:text-left">
-                    <ButtonFill href="#">Продать</ButtonFill>
+                    <ButtonFill href="#" className="mt-[75px] mx-auto xl:ml-[45px] block">Продать</ButtonFill>
                 </div>
             </div>
 
