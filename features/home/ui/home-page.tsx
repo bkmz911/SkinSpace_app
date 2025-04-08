@@ -17,40 +17,64 @@ export const HomePage = () => {
             </section>
 
             {/* why-us and recent-deals part */}
-            <section className="bg-[url(@/public/bg_CS.png)] bg-top bg-no-repeat bg-cover after:content-[''] after:absolute after:h-[17px] after:w-full after:bg-linear-[180deg,rgba(37,31,31,1)_25%,rgba(41,40,39,1)_75%]">
+            <section className="bg-[url(@/public/bg_CS.png)] bg-top bg-no-repeat bg-cover ">
                 <WhyUs />
                 <RecentDeals />
             </section>
-            {/* <div className="w-full h-[20px] bg-linear-[180deg,rgba(40,40,40,1)_25%,rgba(37,41,44,1)_75%] opacity-0.5"></div> */}
-            <section className="bg-[url(@/public/bg_Dota.png)] bg-no-repeat bg-cover bg-top before:content-[''] before:absolute before:h-[17px] before:w-full before:bg-linear-[180deg,rgba(41,40,39,1)_25%,rgba(37,41,43,1)_75%] before:mt-4">
+            <div
+                style={{
+                    background:
+                        "linear-gradient(180deg, #272321 0%, #242222 39.93%, #232528 71.68%, rgba(37, 40, 44, 0) 100%)",
+                }}
+                className="h-[10px] pt-[25px] pb-[35px] relative z-10"
+            ></div>
+            <section className="bg-[url(@/public/bg_Dota.png)] bg-no-repeat bg-cover bg-top -mt-[45px]">
                 <div className="flex justify-end items-center pr-[60px] pt-[35px]">
                     <span className="text-[18px] text-[#a7a8a9] font-semibold">
-                        Всего продано на {" "}
-                        <span className="text-[18px] text-white font-semibold">30050.50</span>
+                        Всего продано на{" "}
+                        <span className="text-[18px] text-white font-semibold">
+                            30050.50
+                        </span>
                     </span>
                 </div>
                 <div className="flex items-center justify-center flex-wrap mt-[120px]">
                     <div className="mx-[70px] mt-[40px] xl:mt-0">
-                        <h2 className="text-[40px] font-semibold text-lemony text-center">30890</h2>
-                        <span className="text-[20px] text-[#a7a8a9] font-medium">Скинов продано</span>
+                        <h2 className="text-[40px] font-semibold text-lemony text-center">
+                            30890
+                        </h2>
+                        <span className="text-[20px] text-[#a7a8a9] font-medium">
+                            Скинов продано
+                        </span>
                     </div>
                     <div className="mx-[70px] mt-[40px] xl:mt-0">
-                        <h2 className="text-[40px] font-semibold text-lemony text-center">10000</h2>
+                        <h2 className="text-[40px] font-semibold text-lemony text-center">
+                            10000
+                        </h2>
                         <span className="text-[20px] text-[#a7a8a9] font-medium">
                             Позитивных отзывов
                         </span>
                     </div>
                     <div className="mx-[70px] mt-[40px] xl:mt-0">
-                        <h2 className="text-[40px] font-semibold text-lemony text-center">5</h2>
-                        <span className="text-[20px] text-[#a7a8a9] font-medium">Лет на рынке</span>
+                        <h2 className="text-[40px] font-semibold text-lemony text-center">
+                            5
+                        </h2>
+                        <span className="text-[20px] text-[#a7a8a9] font-medium">
+                            Лет на рынке
+                        </span>
                     </div>
                     <div className="mx-[70px] mt-[40px] xl:mt-0">
-                        <h2 className="text-[40px] font-semibold text-lemony text-center">9.5</h2>
-                        <span className="text-[20px] text-[#a7a8a9] font-medium">Наша оценка</span>
+                        <h2 className="text-[40px] font-semibold text-lemony text-center">
+                            9.5
+                        </h2>
+                        <span className="text-[20px] text-[#a7a8a9] font-medium">
+                            Наша оценка
+                        </span>
                     </div>
                 </div>
                 <div className="mt-[60px] xl:mt-[100px]">
-                    <h2 className="text-[26px] xl:text-[59px] text-white font-medium text-center">ОТЗЫВЫ О НАС</h2>
+                    <h2 className="text-[26px] xl:text-[59px] text-white font-medium text-center">
+                        ОТЗЫВЫ О НАС
+                    </h2>
                 </div>
                 <div className="flex lg:justify-between justify-center items-center flex-wrap mt-[30px] xl:mt-[50px] px-[10px] sm:px-[35px] xl:px-[50px] mx-[35px] xl:mx-[70px] py-[40px] rounded-2xl border-[1px] border-[#666666]">
                     <div className="flex items-center">
@@ -71,7 +95,9 @@ export const HomePage = () => {
                         </div>
                     </div>
                     <div className="flex items-center gap-1 mx-[50px]">
-                        <span className="text-[30px] text-white font-semibold mr-[8px]">4.5</span>
+                        <span className="text-[30px] text-white font-semibold mr-[8px]">
+                            4.5
+                        </span>
                         <Image
                             src="/full_star.svg"
                             className="w-[28px] h-[28px]"
@@ -108,10 +134,14 @@ export const HomePage = () => {
                             alt="star_rating"
                         />
                     </div>
-                    <ButtonFill href="#" className="mr-[50px]">Смотреть отзывы</ButtonFill>
+                    <ButtonFill href="#" className="mr-[50px]">
+                        Смотреть отзывы
+                    </ButtonFill>
                 </div>
                 <div className="mt-[60px] xl:mt-[100px] mb-[50px]">
-                    <h2 className="text-[26px] xl:text-[59px] font-medium text-white text-center">ЧАСТЫЕ ВОПРОСЫ</h2>
+                    <h2 className="text-[26px] xl:text-[59px] font-medium text-white text-center">
+                        ЧАСТЫЕ ВОПРОСЫ
+                    </h2>
                 </div>
                 <div className="ml-[45px] xl:ml-[100px] mr-[35px] xl:mr-[70px]">
                     <div className="flex items-center justify-between bg-[#3A3C40] mt-[20px] py-[15px] px-[30px] relative before:content-[''] before:absolute before:block before:bg-[#3A3C40] before:w-[2%] before:h-[55px] xl:before:h-[70px] before:translate-x-[-85%] before:origin-bottom before:skew-x-[-10deg] before:left-0 before:top-0">
@@ -199,7 +229,7 @@ export const HomePage = () => {
                             />
                         </div>
                     </div>
-                    <div className="pl-[60px] pr-[50px] py-[20px] xl:py-[35px] -ml-[1.7%] bg-[#3A3C40]">
+                    <div className="pl-[60px] pr-[50px] py-[20px] xl:py-[35px] -ml-[1.7%] bg-[#3A3C40] border-t-[2px] border-[#2b2c30]">
                         <div>
                             <span className="text-[12px] xl:text-[20px] text-[#969799] font-semibold">
                                 Lorem ipsum dolor sit amet, consectetur
@@ -215,6 +245,13 @@ export const HomePage = () => {
                     </div>
                 </div>
             </section>
+            <div
+                className="h-[100px] w-full"
+                style={{
+                    background:
+                        "linear-gradient(180deg, rgba(33,36,39,0.8995973389355743) 18%, rgba(25,27,31,1) 60%)",
+                }}
+            ></div>
         </>
     );
 };

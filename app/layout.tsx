@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/widgets/Header/header";
+import { Footer } from "@/widgets/Footer/footer";
 
 const montserrat = Montserrat({
     variable: "--font-montserrat",
@@ -26,6 +27,7 @@ export default function RootLayout({
             >
                 <Header />
                 <main>{children}</main>
+                <Footer/>
             </body>
         </html>
     );
