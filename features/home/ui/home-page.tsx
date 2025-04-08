@@ -114,7 +114,7 @@ export const HomePage = () => {
                     <h2 className="text-[26px] xl:text-[59px] font-medium text-white text-center">ЧАСТЫЕ ВОПРОСЫ</h2>
                 </div>
                 <div className="ml-[45px] xl:ml-[100px] mr-[35px] xl:mr-[70px]">
-                    <div className="flex items-center justify-between bg-[#2e3032] opacity-60 mt-[20px] py-[15px] px-[30px] relative before:content-[''] before:absolute before:block before:bg-[#2e3032] before:w-[2%] before:h-[55px] xl:before:h-[70px] before:translate-x-[-85%] before:origin-bottom before:skew-x-[-10deg] before:left-0 before:top-0">
+                    <div className="flex items-center justify-between bg-[#3A3C40] mt-[20px] py-[15px] px-[30px] relative before:content-[''] before:absolute before:block before:bg-[#3A3C40] before:w-[2%] before:h-[55px] xl:before:h-[70px] before:translate-x-[-85%] before:origin-bottom before:skew-x-[-10deg] before:left-0 before:top-0">
                         <div>
                             <span className="text-[12px] xl:text-[20px] text-[#E9EAEA] font-semibold">
                                 Lorem ipsum dolor sit amet, consectetur
@@ -122,14 +122,16 @@ export const HomePage = () => {
                             </span>
                         </div>
                         <div className="rounded-full w-[25px] xl:w-[40px] h-[25px] xl:h-[40px] bg-[#414347] flex justify-center items-center">
-                            <img
-                                src="img/circel_arrow.svg"
+                            <Image
+                                src="/circel_arrow.svg"
                                 className="w-[9px] xl:w-[14px] h-[5px] xl:h-[9px]"
+                                width={14}
+                                height={9}
                                 alt="arrow"
                             />
                         </div>
                     </div>
-                    <div className="flex items-center justify-between mt-[20px] py-[15px] px-[30px] relative before:content-[''] before:absolute before:block before:bg-[#2e3032] before:w-[2%] before:h-[55px] xl:before:h-[70px] before:translate-x-[-85%] before:origin-bottom before:skew-x-[-10deg] before:left-0 before:top-0">
+                    <div className="flex items-center justify-between bg-[#3A3C40] mt-[20px] py-[15px] px-[30px] relative before:content-[''] before:absolute before:block before:bg-[#3A3C40] before:w-[2%] before:h-[55px] xl:before:h-[70px] before:translate-x-[-85%] before:origin-bottom before:skew-x-[-10deg] before:left-0 before:top-0">
                         <div>
                             <span className="text-[12px] xl:text-[20px] text-[#E9EAEA] font-semibold">
                                 Lorem ipsum dolor sit amet, consectetur
@@ -137,14 +139,16 @@ export const HomePage = () => {
                             </span>
                         </div>
                         <div className="rounded-full w-[25px] xl:w-[40px] h-[25px] xl:h-[40px] bg-[#414347] flex justify-center items-center">
-                            <img
-                                src="img/circel_arrow.svg"
+                            <Image
+                                src="/circel_arrow.svg"
                                 className="w-[9px] xl:w-[14px] h-[5px] xl:h-[9px]"
+                                width={14}
+                                height={9}
                                 alt="arrow"
                             />
                         </div>
                     </div>
-                    <div className="flex items-center justify-between mt-[20px] py-[15px] px-[30px] relative before:content-[''] before:absolute before:block before:bg-[#2e3032] before:w-[2%] before:h-[55px] xl:before:h-[70px] before:translate-x-[-85%] before:origin-bottom before:skew-x-[-10deg] before:left-0 before:top-0">
+                    <div className="flex items-center justify-between bg-[#3A3C40] mt-[20px] py-[15px] px-[30px] relative before:content-[''] before:absolute before:block before:bg-[#3A3C40] before:w-[2%] before:h-[55px] xl:before:h-[70px] before:translate-x-[-85%] before:origin-bottom before:skew-x-[-10deg] before:left-0 before:top-0">
                         <div>
                             <span className="text-[12px] xl:text-[20px] text-[#E9EAEA] font-semibold">
                                 Lorem ipsum dolor sit amet, consectetur
@@ -152,14 +156,16 @@ export const HomePage = () => {
                             </span>
                         </div>
                         <div className="rounded-full w-[25px] xl:w-[40px] h-[25px] xl:h-[40px] bg-[#414347] flex justify-center items-center">
-                            <img
-                                src="img/circel_arrow.svg"
+                            <Image
+                                src="/circel_arrow.svg"
                                 className="w-[9px] xl:w-[14px] h-[5px] xl:h-[9px]"
+                                width={14}
+                                height={9}
                                 alt="arrow"
                             />
                         </div>
                     </div>
-                    <div className="flex items-center justify-between mt-[20px] py-[15px] px-[30px] relative before:content-[''] before:absolute before:block before:bg-[#2e3032] before:w-[2%] before:h-[55px] xl:before:h-[70px] before:translate-x-[-85%] before:origin-bottom before:skew-x-[-10deg] before:left-0 before:top-0">
+                    <div className="flex items-center justify-between bg-[#3A3C40] mt-[20px] py-[15px] px-[30px] relative before:content-[''] before:absolute before:block before:bg-[#3A3C40] before:w-[2%] before:h-[55px] xl:before:h-[70px] before:translate-x-[-85%] before:origin-bottom before:skew-x-[-10deg] before:left-0 before:top-0">
                         <div>
                             <span className="text-[12px] xl:text-[20px] text-[#E9EAEA] font-semibold">
                                 Lorem ipsum dolor sit amet, consectetur
@@ -167,14 +173,16 @@ export const HomePage = () => {
                             </span>
                         </div>
                         <div className="rounded-full w-[25px] xl:w-[40px] h-[25px] xl:h-[40px] bg-[#414347] flex justify-center items-center">
-                            <img
-                                src="img/circel_arrow.svg"
+                            <Image
+                                src="/circel_arrow.svg"
                                 className="w-[9px] xl:w-[14px] h-[5px] xl:h-[9px]"
+                                width={14}
+                                height={9}
                                 alt="arrow"
                             />
                         </div>
                     </div>
-                    <div className="flex items-center justify-between mt-[20px] py-[15px] px-[30px] relative before:content-[''] before:absolute before:block before:bg-[#2e3032] before:w-[2%] before:h-[55px] xl:before:h-[70px] before:translate-x-[-85%] before:origin-bottom before:skew-x-[-10deg] before:left-0 before:top-0">
+                    <div className="flex items-center justify-between bg-[#3A3C40] mt-[20px] py-[15px] px-[30px] relative before:content-[''] before:absolute before:block before:bg-[#3A3C40] before:w-[2%] before:h-[55px] xl:before:h-[70px] before:translate-x-[-85%] before:origin-bottom before:skew-x-[-10deg] before:left-0 before:top-0">
                         <div>
                             <span className="text-[12px] xl:text-[20px] text-[#E9EAEA] font-semibold">
                                 Lorem ipsum dolor sit amet, consectetur
@@ -182,14 +190,16 @@ export const HomePage = () => {
                             </span>
                         </div>
                         <div className="rounded-full w-[25px] xl:w-[40px] h-[25px] xl:h-[40px] bg-[#414347] flex justify-center items-center">
-                            <img
-                                src="img/circel_arrow.svg"
+                            <Image
+                                src="/circel_arrow.svg"
                                 className="w-[9px] xl:w-[14px] h-[5px] xl:h-[9px]"
+                                width={14}
+                                height={9}
                                 alt="arrow"
                             />
                         </div>
                     </div>
-                    <div className="pl-[60px] pr-[50px] py-[20px] xl:py-[35px] -ml-[1.7%]">
+                    <div className="pl-[60px] pr-[50px] py-[20px] xl:py-[35px] -ml-[1.7%] bg-[#3A3C40]">
                         <div>
                             <span className="text-[12px] xl:text-[20px] text-[#969799] font-semibold">
                                 Lorem ipsum dolor sit amet, consectetur
