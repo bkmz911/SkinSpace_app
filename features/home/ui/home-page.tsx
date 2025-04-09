@@ -246,10 +246,9 @@ export const HomePage = () => {
                 </div>
             </section>
             <div
-                className="h-[100px] w-full"
+                className="h-[200px] w-full"
                 style={{
-                    background:
-                        "linear-gradient(180deg, rgba(33,36,39,0.8995973389355743) 18%, rgba(25,27,31,1) 60%)",
+                        background: "linear-gradient(180deg, rgba(33,36,39,0.8995973389355743) 18%, rgba(25,27,31,1) 60%)"
                 }}
             ></div>
         </>

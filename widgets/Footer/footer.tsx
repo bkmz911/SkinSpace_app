@@ -4,7 +4,7 @@ import React from "react";
 export const Footer = () => {
     return (
         <footer
-            className="pb-[80px] pt-[50px]"
+            className="pb-[80px] -mt-[100px]"
             style={{
                 background:
                     "linear-gradient(180deg, rgba(39, 38, 39, 0) 0%, rgba(34, 34, 36, 0.76) 32.43%, rgba(31, 31, 34, 0.81) 54.41%, #181A1E 100%)",
