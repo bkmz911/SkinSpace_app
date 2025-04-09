@@ -9,6 +9,19 @@ export { ItemsBlock } from "@/features/home/ui/why-us_part/items-block";
 export { ItemImage } from "@/features/home/ui/why-us_part/item-image";
 export { ItemContent } from "@/features/home/ui/why-us_part/item-content";
 
-// Exports for recent-deals-part:
+// Exports from recent-deals_part:
 export { RecentDeals } from "@/features/home/ui/recent-deals_part/recent-deals";
 export { RecentDealsItems } from "@/features/home/ui/recent-deals_part/recent-deals_items";
+
+// Export from current directory
+export { IntermediateBlock } from "@/features/home/ui/intermediate-block";
+
+// Exports from statistic_part
+export { TotalSold } from "@/features/home/ui/statistic_part/total-sold";
+export { Statistic } from "@/features/home/ui/statistic_part/statistic";
+export { StatisticItem } from "@/features/home/ui/statistic_part/statistic-item";
+
+// Exports from FAQ_part
+export { FAQ } from "@/features/home/ui/FAQ_part/FAQ";
+export { Accordion } from "@/features/home/ui/FAQ_part/accordion";
+export { AccordionItem } from "@/features/home/ui/FAQ_part/accordion-item";
