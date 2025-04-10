@@ -21,7 +21,7 @@ const items = [
 
 export const Statistic = () => {
     return (
-        <div className="flex items-center justify-center flex-wrap mt-[120px]">
+        <div className="flex items-center justify-center flex-wrap mt-[60px] xl:mt-[100px]">
             {items.map((item) => {
                 return (
                     <StatisticItem

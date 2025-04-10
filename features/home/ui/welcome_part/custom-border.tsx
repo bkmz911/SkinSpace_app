@@ -6,7 +6,7 @@ export const CustomBorder = () => {
             <div className="rounded-full w-[40px] h-[40px] bg-blueBlack flex justify-center items-center mx-auto relative bottom-[10px] animate-bounce">
                 <Image
                     src="/circel_arrow.svg"
-                    className="w-[9px] xl:w-[14px] h-[5px] xl:h-[9px]"
+                    className="w-[14px] h-[9px]"
                     width={14}
                     height={14}
                     alt="arrow"
