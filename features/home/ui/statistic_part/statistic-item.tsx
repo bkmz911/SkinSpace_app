@@ -1,12 +1,11 @@
 interface StatisticItem {
-    key: number
-    num: number
-    text: string
+    num: number;
+    text: string;
 }
 
-export const StatisticItem = ({num, text, key}: StatisticItem) => {
+export const StatisticItem = ({ num, text }: StatisticItem) => {
     return (
-        <div key={key} className="mx-[70px] mt-[40px] xl:mt-0">
+        <div className="mx-[70px] mt-[40px] xl:mt-0">
             <h2 className="text-[40px] font-semibold text-lemony text-center">
                 {num}
             </h2>

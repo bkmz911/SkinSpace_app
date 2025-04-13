@@ -3,9 +3,11 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/widgets/Header/header";
 import { Footer } from "@/widgets/Footer/footer";
+import StoreProvider from "@/store/storeProvider";
 
 const montserrat = Montserrat({
     variable: "--font-montserrat",
+    weight: ["500", "600", "700", "800"],
     subsets: ["latin"],
 });
 
@@ -25,9 +27,11 @@ export default function RootLayout({
             <body
                 className={`${montserrat.className} antialiased bg-[#1F2125]`}
             >
-                <Header />
-                <main>{children}</main>
-                <Footer/>
+                <StoreProvider>
+                    <Header />
+                    <main>{children}</main>
+                    <Footer />
+                </StoreProvider>
             </body>
         </html>
     );
