@@ -6,7 +6,7 @@ import {
     loginSuccess,
 } from "@/store/features/auth-slice";
 
-const API_URL = process.env.NEXT_API_URL || "http://localhost:3001";
+const API_URL = process.env || "http://localhost:3001";
 
 export const useGetUser = () => {
     const dispatch = useAppDispatch(),
