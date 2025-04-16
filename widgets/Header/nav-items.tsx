@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const NavItems = () => {
     const className =
             "text-[12px] uppercase text-[#a5a6a8] font-semibold mx-[30px] cursor-pointer",
@@ -23,9 +25,9 @@ export const NavItems = () => {
     return (
         <div className="hidden xl:block">
             {items.map((item) => (
-                <span key={item.text} className={item.className}>
+                <Link href="/sell" key={item.text} className={item.className}>
                     {item.text}
-                </span>
+                </Link>
             ))}
         </div>
     );

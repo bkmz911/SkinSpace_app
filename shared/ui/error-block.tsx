@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-export const ErrorBlock = () => {
+interface ErrorBlockProps {
+    text: string;
+}
+
+export const ErrorBlock = ({ text }: ErrorBlockProps) => {
     return (
         <div className="bg-[#2c2f35] opacity-85 rounded-[16px] w-[270px] sm:w-[500px] py-[20px] sm:py-[48px] mx-auto relative mt-[50px]">
             <Image
@@ -11,7 +15,7 @@ export const ErrorBlock = () => {
                 alt="error"
             />
             <h2 className="text-[14px] sm:text-[20px] text-white font-medium leading-[20px] sm:leading-[30px] mt-[10px] sm:mt-[14px] max-w-[242px] sm:max-w-[346px] mx-auto text-center">
-                Не удалось выставить предметы на продажу! Попробуйте позже.
+                {text}
             </h2>
         </div>
     );

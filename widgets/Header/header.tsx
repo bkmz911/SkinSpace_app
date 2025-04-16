@@ -13,7 +13,7 @@ export const Header = () => {
     const { user, isLoading, error } = useGetUser();
 
     if (isLoading) return <PreloaderAuthentication />;
-    if (error) return <ErrorBlock />;
+    if (error) return <ErrorBlock text="Не удалось получить данные о пользователе! Попробуйте позже." />;
 
     return (
         <header className="mx-[35px] xl:mx-[60px]">

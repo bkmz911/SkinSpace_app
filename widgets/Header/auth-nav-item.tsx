@@ -35,7 +35,7 @@ export const AuthNavItem = ({ avatar }: AuthNavItemProps) => {
                         alt="avatar"
                     />
                     <Image
-                        src="/account_arrow.svg"
+                        src="/arrow_account.svg"
                         className="w-[8px] h-[8px] xl:w-[14px] xl:h-[14px] ml-1 xl:ml-[7px]"
                         width={14}
                         height={14}
