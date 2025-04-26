@@ -1,6 +1,6 @@
-const handleRedirect = () => {
-    window.location.href = "http://localhost:3001/logout";
-};
+"use client";
+
+import Link from "next/link";
 
 const items = [
     {
@@ -29,12 +29,12 @@ export const NavPopUp = () => {
                         {item.text}
                     </li>
                 ))}
-                <li
+                <Link
+                    href="http://localhost:3001/api/logout"
                     className="px-4 py-2 hover:bg-blackOlive hover:rounded-b-md"
-                    onClick={() => handleRedirect()}
                 >
                     Выйти
-                </li>
+                </Link>
             </ul>
         </div>
     );

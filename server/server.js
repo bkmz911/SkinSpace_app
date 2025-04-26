@@ -11,6 +11,8 @@ const axios = require("axios");
 const app = express();
 const port = 3001;
 
+app.use(express.json());
+
 // Настройка CORS для работы с фронтендом на Next.js
 app.use(
     cors({
@@ -82,29 +84,51 @@ app.get("/api/user", (req, res) => {
     }
 });
 
-app.get("/logout", (req, res) => {
-    req.logout((err) => {
-        if (err) return res.status(500).json({ message: "Logout failed" });
-        res.redirect("http://localhost:3000/");
+app.get("/api/logout", (req, res) => {
+    req.logout(err => {
+      if (err) return res.status(500).json({ message: "Logout failed" });
+      res.clearCookie("connect.sid");
+      // либо верните JSON { ok: true }, либо редирект:
+      return res.redirect("http://localhost:3000/");
     });
-});
+  });
+
+
+// Получение инвентаря юзера по конкретной игре:
+
+const gameAppIds = {
+    CS2: 730,
+    "Dota 2": 570,
+    Rust: 252490,
+};
 
 app.get("/api/inventory", async (req, res) => {
-    if (req.isAuthenticated()) {
-        const steamId = req.user.id;
-        const appId = 730,
-            contextId = 2;
-        try {
-            const response = await axios.get(
-                `https://steamcommunity.com/inventory/${steamId}/${appId}/${contextId}?l=russian&count=500`
-            );
-            res.json(response.data);
-        } catch (error) {
-            console.error(error);
-            res.status(500).json({ error: "Ошибка получения инвентаря" });
-        }
-    } else {
-        res.status(401).json({ message: "Not authenticated" });
+    if (!req.isAuthenticated()) {
+        return res.status(401).json({ message: "Not authenticated" });
+    }
+
+    const steamId = req.user.id;
+    const gameKey = req.query.currentGame; // ожидаем "CS2", "Dota 2" или "Rust"
+    const appId = gameAppIds[gameKey] || gameAppIds["Dota 2"];
+    const contextId = 2; // обычно 2 для большинства игр
+
+    try {
+        const steamRes = await axios.get(
+            `https://steamcommunity.com/inventory/${steamId}/${appId}/${contextId}?l=russian&count=500`
+        );
+        return res.json(steamRes.data);
+    } catch (error) {
+        console.error("Steam Inventory Error:", error);
+        return res.status(500).json({ error: "Ошибка получения инвентаря" });
     }
 });
 
+app.post("/api/set-api-key", (req, res) => {
+    const { apiKey } = req.body;
+    if (typeof apiKey !== "string" || !apiKey.trim()) {
+        return res.status(400).json({ error: "Invalid apiKey" });
+    }
+
+    req.session.apiKey = apiKey.trim();
+    res.json({ ok: true });
+});
