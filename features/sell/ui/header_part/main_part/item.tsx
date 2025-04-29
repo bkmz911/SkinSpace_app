@@ -1,15 +1,15 @@
 import { DescriptionItem } from "@/shared/lib/items-type";
 import Image from "next/image";
+import { capitalize } from "lodash";
 
 interface ItemProps {
     item: DescriptionItem;
+    game: string;
 }
 
-export const Item = ({ item }: ItemProps) => {
+export const Item = ({ item, game }: ItemProps) => {
     return (
-        <div
-            className="rounded-[6px] w-[240px]"
-        >
+        <div className="rounded-[6px] w-[240px]">
             <div
                 className="rounded-t-[6px] relative"
                 style={{
@@ -28,8 +28,31 @@ export const Item = ({ item }: ItemProps) => {
                     {item.market_name}
                 </p>
                 <div className="flex items-center justify-between mt-[10px]">
-                    <p className="text-[18px] text-lemony font-extrabold leading-normal">
-                        {item.tags[0].localized_tag_name}
+                    <p
+                        style={{
+                            color: `#${
+                                item.tags[
+                                    game.toLowerCase().trim() === "dota2"
+                                        ? 1
+                                        : 2
+                                ].color
+                            }`,
+                        }}
+                        className={`text-[18px] ${
+                            game.toLowerCase().trim() !== "dota2" &&
+                            !item.tags[2].color &&
+                            "text-lemony"
+                        } font-extrabold leading-normal`}
+                    >
+                        {capitalize(
+                            item.tags[
+                                `${
+                                    game.toLowerCase().trim() === "dota2"
+                                        ? 1
+                                        : 2
+                                }`
+                            ].localized_tag_name
+                        )}
                     </p>
                     <Image
                         src="/plus-icon.svg"

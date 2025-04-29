@@ -17,7 +17,7 @@ export { RecentDealsItems } from "@/features/home/ui/recent-deals_part/recent-de
 export { IntermediateBlock } from "@/features/home/ui/intermediate-block";
 
 // Exports from statistic_part
-export { TotalSold } from "@/features/home/ui/statistic_part/total-sold";
+export { Plug } from "@/features/home/ui/statistic_part/plug";
 export { Statistic } from "@/features/home/ui/statistic_part/statistic";
 export { StatisticItem } from "@/features/home/ui/statistic_part/statistic-item";
 

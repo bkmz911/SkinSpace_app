@@ -1,7 +1,7 @@
 import { ButtonFill } from "@/shared/ui";
 import { ImageBlock } from "@/features/home/ui";
-
 export const WelcomeBlock = () => {
+
     return (
         <div className="flex items-center justify-center flex-wrap mt-[50px] xl:mt-0">
             <div className="max-w-[570px] mx-[35px] xl:mr-[15px]">
@@ -12,7 +12,7 @@ export const WelcomeBlock = () => {
                     <span className="text-[#a5a6a8] text-[10px] xl:text-[18px]">
                         Мгновенный обмен, продажа или покупка скинов{" "}
                         <span className="text-lemony text-[10px] xl:text-[18px]">
-                            CS:GO , DOTA 2{" "}
+                            CS2, DOTA 2{" "}
                         </span>
                         <span className="text-white text-[10px] xl:text-[18px]">
                             за реальные деньги!
@@ -20,7 +20,7 @@ export const WelcomeBlock = () => {
                     </span>
                 </div>
                 <div className="text-center xl:text-left">
-                    <ButtonFill href="#" className="mt-[75px] mx-auto xl:ml-[45px] block">Продать</ButtonFill>
+                    <ButtonFill href={`/sell/dota2`} className="mt-[75px] mx-auto xl:ml-[45px] block">Продать</ButtonFill>
                 </div>
             </div>
 

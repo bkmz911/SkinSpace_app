@@ -14,7 +14,7 @@ export const Header = () => {
                 height={30}
                 alt="reload-icon"
             />
-            <PopUpBase mainText="Dota 2" items={["Dota 2", "CS2", "Rust"]} />
+            <PopUpBase items={["Dota 2", "CS2"]} href={["dota2", "cs2"]} />
             <SearchInput />
             {/* <PopUpBase
                 mainText="Все предметы"

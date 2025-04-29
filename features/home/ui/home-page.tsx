@@ -4,7 +4,7 @@ import {
     IntermediateBlock,
     RecentDeals,
     Statistic,
-    TotalSold,
+    Plug,
     WelcomeBlock,
     WhyUs,
 } from "@/features/home/ui";
@@ -19,7 +19,7 @@ export const HomePage = () => {
             </section>
 
             {/* why-us and recent-deals parts */}
-            <section className="bg-[url(@/public/bg_CS.png)] bg-top bg-no-repeat bg-cover ">
+            <section className="bg-[url(/bg_CS.png)] bg-top bg-no-repeat bg-cover ">
                 <WhyUs />
                 <RecentDeals />
             </section>
@@ -31,8 +31,8 @@ export const HomePage = () => {
             />
 
             {/* statistic and FAQ parts */}
-            <section className="bg-[url(@/public/bg_Dota.png)] bg-no-repeat bg-cover bg-top -mt-[45px]">
-                <TotalSold />
+            <section className="bg-[url(/bg_Dota.png)] bg-no-repeat bg-cover bg-top -mt-[45px]">
+                <Plug />
                 <Statistic />
                 <FAQ />
             </section>

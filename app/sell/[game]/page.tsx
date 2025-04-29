@@ -3,14 +3,17 @@ import Image from "next/image";
 
 export default async function Sell({
     params,
+    searchParams,
 }: {
     params: Promise<{ game: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-    const { game } = await params;
+    const { game } = await params,
+        { sort, order } = await searchParams;
 
     return (
         <section className="flex justify-center gap-[12px] flex-wrap my-[60px] ml-[60px] mr-[80px]">
-            <ItemsBlock game={game} />
+            <ItemsBlock game={game} sort={sort} sortOrder={order} />
             <Image
                 src="/arrow_continue.svg"
                 width={50}

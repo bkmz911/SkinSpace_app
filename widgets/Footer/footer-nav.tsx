@@ -6,30 +6,34 @@ const classNameFirstItem =
         "block text-[14px] xl:text-[18px] font-medium text-[#b0b0b1] pt-[20px]",
     nav_items = [
         {
-            text: "Обмен",
+            text: "Главная",
             className: classNameFirstItem,
-        },
-        {
-            text: "Купить",
-            className: classNameItem,
+            href: "/",
         },
         {
             text: "Продать",
             className: classNameItem,
+            href: "/sell/dota2",
         },
         {
             text: "FAQ",
             className: classNameItem,
+            href: "/faq",
         },
     ],
     items = [
         {
             text: "Контакты",
             className: classNameFirstItem,
+            href: "#",
         },
-        { text: "Гарантии", className: classNameItem },
-        { text: "Как это работает", className: classNameItem },
-        { text: "Политика конфиденциальности", className: classNameItem },
+        { text: "Гарантии", className: classNameItem, href: "#" },
+        { text: "Как это работает", className: classNameItem, href: "#" },
+        {
+            text: "Политика конфиденциальности",
+            className: classNameItem,
+            href: "#",
+        },
     ];
 
 export const FooterNav = () => {
