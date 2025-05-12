@@ -12,13 +12,13 @@ interface PopUpBaseProps {
 type ParamsType = {
     game: string;
 };
-export const PopUpBase = ({ items, href }: PopUpBaseProps) => {
+export const PopUpGames = ({ items, href }: PopUpBaseProps) => {
     const params = useParams<ParamsType>(),
         newParams = (params?.game ?? "").toUpperCase();
 
     return (
         <details className="relative inline-block text-left">
-            <summary className="inline-flex justify-between items-center rounded-[6px] border-[2px] border-[#ffffff33] px-[28px] py-[10px] bg-[#292c32] text-white text-sm font-[500] hover:bg-[#2c2f35] cursor-pointer list-none">
+            <summary className="inline-flex justify-between items-center rounded-[6px] border-[2px] border-[#ffffff33] px-[20px] py-[10px] bg-[#292c32] text-white text-sm font-[500] hover:bg-[#2c2f35] cursor-pointer list-none">
                 {newParams}
                 <Image
                     src="/arrow_button.svg"
@@ -35,7 +35,7 @@ export const PopUpBase = ({ items, href }: PopUpBaseProps) => {
                             ? "text-white"
                             : "text-[#9c9da1]"
                     } hover:bg-blackOlive hover:rounded-[6px] cursor-pointer block`}
-                    href={`/sell/${href?.[0] ?? "dota2"}`}
+                    href={`/sell/${href?.[0] ?? "dota2"}?filter=all`}
                 >
                     {items[0]}
                 </Link>
@@ -46,7 +46,7 @@ export const PopUpBase = ({ items, href }: PopUpBaseProps) => {
                             ? "text-white"
                             : "text-[#9c9da1]"
                     } hover:bg-blackOlive hover:rounded-[6px] cursor-pointer block`}
-                    href={`/sell/${href?.[1] ?? "dota2"}`}
+                    href={`/sell/${href?.[1] ?? "dota2"}?filter=all`}
                 >
                     {items[1]}
                 </Link>

@@ -1,12 +1,14 @@
 import Image from "next/image";
 
-interface ErrorBlockProps {
+type ErrorBlockProps = {
     text: string;
-}
+};
 
 export const ErrorBlock = ({ text }: ErrorBlockProps) => {
     return (
-        <div className="bg-[#2c2f35] opacity-85 rounded-[16px] w-[270px] sm:w-[500px] py-[20px] sm:py-[48px] mx-auto relative mt-[50px]">
+        <div
+            className={`bg-[#2c2f35] opacity-85 rounded-[16px] py-[20px] px-[20px] sm:py-[48px] mx-auto relative`}
+        >
             <Image
                 src="/error.svg"
                 width={30}

@@ -1,9 +1,9 @@
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
 
 export const Logo = () => {
     return (
-        <div className="flex items-end cursor-pointer">
+        <Link href="/" className="flex items-end cursor-pointer">
             <div className="mr-[4px] relative bottom-[5px]">
                 <Image
                     src="/nav_burger.svg"
@@ -23,6 +23,6 @@ export const Logo = () => {
             <h2 className="text-[16px] xl:text-[30px] text-white font-bold ml-[4px]">
                 SkinSpace
             </h2>
-        </div>
+        </Link>
     );
 };

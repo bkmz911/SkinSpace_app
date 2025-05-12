@@ -1,4 +1,4 @@
-import { getUser } from "@/shared/lib/get-user";
+import { getUser } from "@/shared/lib/user/get-user";
 import { ErrorBlock } from "@/shared/ui";
 import {
     AuthNavItem,
@@ -30,7 +30,9 @@ export const Header = async () => {
         );
     } catch {
         return (
-            <ErrorBlock text="Не удалось получить данные о пользователе! Попробуйте позже." />
+            <div className="mt-[20px] flex mx-auto">
+                <ErrorBlock text="Не удалось получить данные о пользователе! Попробуйте позже." />
+            </div>
         );
     }
 };

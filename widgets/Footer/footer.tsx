@@ -1,13 +1,18 @@
 "use client";
 import { FooterNav, FooterContacts } from "@/widgets/Footer";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 
 export const Footer = () => {
-    const params = useParams();
+    const params = useParams(),
+        pathname = usePathname();
 
     return (
         <footer
-            className={`pb-[80px] ${params.game ? "mt-0" : "-mt-[100px]"}`}
+            className={`pb-[80px] ${
+                params.game || pathname === "/personal-cabinet"
+                    ? "mt-[100px]"
+                    : "-mt-[100px]"
+            }`}
             style={{
                 background:
                     "linear-gradient(180deg, rgba(39, 38, 39, 0) 0%, rgba(34, 34, 36, 0.76) 32.43%, rgba(31, 31, 34, 0.81) 54.41%, #181A1E 100%)",

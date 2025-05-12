@@ -7,7 +7,7 @@ export const ResetButton = () => {
     const { game } = useParams();
 
     return (
-        <Link href={`/sell/${game}`}>
+        <Link href={`/sell/${game}?filter=all`}>
             <Image
                 src="/reload-icon.svg"
                 width={30}

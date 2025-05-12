@@ -84,6 +84,14 @@ app.get("/api/user", (req, res) => {
     }
 });
 
+app.get("/api/user-id", (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.status(401).json({ message: "Not authenticated" });
+    }
+    // В passport-steam поле id — это именно SteamID64
+    return res.json({ steamId: req.user.id });
+});
+
 app.get("/api/logout", (req, res) => {
     req.logout((err) => {
         if (err) return res.status(500).json({ message: "Logout failed" });
@@ -94,7 +102,6 @@ app.get("/api/logout", (req, res) => {
 });
 
 // Получение инвентаря юзера по конкретной игре:
-
 const gameAppIds = {
     CS2: 730,
     "Dota 2": 570,
@@ -119,15 +126,21 @@ app.get("/api/inventory", async (req, res) => {
     }
 
     const steamId = req.user.id;
-    // 1) Нормализуем incoming параметр
+    // 1) Нормализация incoming параметров
     const rawGame = String(req.query.currentGame || "");
     const normGame = rawGame.toLowerCase().replace(/\s+/g, "");
+    const sort = String(req.query.sort || "");
+    const order = String(req.query.order || "");
+    const filter = String(req.query.filter || "all");
+    const searchQuery = String(req.query.searchQuery || "")
+        .trim()
+        .toLowerCase();
 
-    // 2) Берём appId из нормализованной мапы или по умолчанию Dota 2
+    // 2) Выбор appId и contextId
     const appId = normalizedAppIds[normGame] || gameAppIds["Dota 2"];
     const contextId = 2;
 
-    // 2.1) Словари редкости для сортировки
+    // 2.1) Словари редкости
     const rarityOrder = {
         dota2: [
             "Common",
@@ -151,9 +164,6 @@ app.get("/api/inventory", async (req, res) => {
             "Contraband",
         ],
     };
-    // извлекаем параметры сортировки из query
-    const { sort, order } = req.query;
-    // выбираем мапу для текущей игры, или дефолтную Dota2
     const orderMap = rarityOrder[normGame] || rarityOrder.dota2;
 
     try {
@@ -163,27 +173,40 @@ app.get("/api/inventory", async (req, res) => {
             { params: { l: "russian", count: 500 } }
         );
 
-        // 4) Сортируем descriptions по редкости, если нужно
+        // Извлекаем массив descriptions
         let descriptions = steamRes.data.descriptions;
+
+        // 4) Поисковая фильтрация по market_name
+        if (searchQuery) {
+            descriptions = descriptions.filter((item) =>
+                item.market_name.toLowerCase().includes(searchQuery)
+            );
+        }
+
+        // 5) Фильтрация по возможности торговли
+        if (filter === "tradable") {
+            descriptions = descriptions.filter((item) => item.tradable === 1);
+        } else if (filter === "nontradable") {
+            descriptions = descriptions.filter((item) => item.tradable === 0);
+        }
+
+        // 6) Сортировка по редкости, если указано
         if (sort === "rarity") {
             descriptions = descriptions.sort((a, b) => {
-                // находим index локализованной редкости в orderMap
-                const aTag = a.tags.find((t) =>
-                    orderMap.includes(t.localized_tag_name)
-                )?.localized_tag_name;
-                const bTag = b.tags.find((t) =>
-                    orderMap.includes(t.localized_tag_name)
-                )?.localized_tag_name;
-                const ai = orderMap.indexOf(aTag || "");
-                const bi = orderMap.indexOf(bTag || "");
+                const aTag =
+                    a.tags.find((t) => orderMap.includes(t.localized_tag_name))
+                        ?.localized_tag_name || "";
+                const bTag =
+                    b.tags.find((t) => orderMap.includes(t.localized_tag_name))
+                        ?.localized_tag_name || "";
+                const ai = orderMap.indexOf(aTag),
+                    bi = orderMap.indexOf(bTag);
                 return order === "desc" ? bi - ai : ai - bi;
             });
         }
 
-        // 5) Отдаём клиенту оригинальный объект, но с отсортированным descriptions
-        const response = { ...steamRes.data, descriptions };
-
-        return res.json(response);
+        // 7) Ответ клиенту — оригинальный объект + обновлённый descriptions
+        return res.json({ descriptions });
     } catch (error) {
         console.error("Steam Inventory Error:", error);
         return res.status(500).json({ error: "Ошибка получения инвентаря" });

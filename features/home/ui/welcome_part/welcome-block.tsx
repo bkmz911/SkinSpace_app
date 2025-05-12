@@ -1,4 +1,4 @@
-import { ButtonFill } from "@/shared/ui";
+import { ButtonFillActive } from "@/shared/ui";
 import { ImageBlock } from "@/features/home/ui";
 export const WelcomeBlock = () => {
 
@@ -20,7 +20,7 @@ export const WelcomeBlock = () => {
                     </span>
                 </div>
                 <div className="text-center xl:text-left">
-                    <ButtonFill href={`/sell/dota2`} className="mt-[75px] mx-auto xl:ml-[45px] block">Продать</ButtonFill>
+                    <ButtonFillActive href={`/sell/dota2?filter=all`} className="mt-[75px] mx-auto xl:ml-[45px] block">Продать</ButtonFillActive>
                 </div>
             </div>
 
