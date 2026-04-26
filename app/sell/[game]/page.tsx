@@ -12,7 +12,7 @@ export default async function Sell({
     const { game } = await params,
         { sort, order, filter, searchQuery } = await searchParams;
     return (
-        <section className="flex justify-center gap-[12px] flex-wrap my-[60px] ml-[60px] mr-[80px]">
+        <section className="sell-items flex justify-center gap-[12px] flex-wrap my-[60px] mx-[60px]">
             <ItemsBlock
                 game={game}
                 sort={sort}
@@ -25,6 +25,7 @@ export default async function Sell({
                 width={50}
                 height={50}
                 alt="arrow-continue"
+                className="arrow-continue"
             />
             <Cart />
         </section>

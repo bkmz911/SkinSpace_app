@@ -7,7 +7,7 @@ import {
 } from "@/features/sell/ui/items/main_part";
 export const Header = () => {
     return (
-        <div className="flex items-center justify-between gap-[30px]">
+        <div className="flex items-center justify-between gap-[10px] 2xl:gap-[30px]">
             <ResetButton />
             <PopUpGames items={["Dota 2", "CS2"]} href={["dota2", "cs2"]} />
             <SearchInput />

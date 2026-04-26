@@ -20,7 +20,7 @@ export const PopUpFilter = () => {
 
     return (
         <details className="relative inline-block text-left">
-            <summary className="inline-flex justify-between items-center rounded-[6px] border-[2px] border-[#ffffff33] px-[20px] py-[10px] bg-[#292c32] text-white text-sm font-[500] hover:bg-[#2c2f35] cursor-pointer list-none">
+            <summary className="inline-flex justify-between items-center whitespace-nowrap rounded-[6px] border-[2px] border-[#ffffff33] px-[20px] py-[10px] bg-[#292c32] text-white text-sm font-[500] hover:bg-[#2c2f35] cursor-pointer list-none">
                 {summaryLabel}
                 <Image
                     src="/arrow_button.svg"
